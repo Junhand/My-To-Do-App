@@ -10,6 +10,13 @@ import UIKit
 
 class TaskTableViewCell: UITableViewCell {
 
+    // MARK: - Properties
+    
+    static let reuseIdentifier = "TaskCell"
+    
+    // MARK: -
+    
+    @IBOutlet var taskLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

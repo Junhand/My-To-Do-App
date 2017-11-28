@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,129 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Core_ToDo_for_Qiita" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OXF-QU-TGm" customClass="TaskTableViewCell">
+                                <rect key="frame" x="37.5" y="33.5" width="300" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Kfi-Vn-01b"/>
+                                    <constraint firstAttribute="height" constant="600" id="VNZ-oS-ObV"/>
+                                </constraints>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y4K-G7-gIR">
+                                <rect key="frame" x="287" y="574" width="22" height="22"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <segue destination="SLk-Fk-FqG" kind="show" id="DFA-Jn-pLy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94293551509999995" green="0.95407626300000004" blue="0.92509464860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="y4K-G7-gIR" secondAttribute="bottom" constant="70" id="1ZX-Xd-xR8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="y4K-G7-gIR" secondAttribute="trailing" constant="70" id="Eya-lb-IrZ"/>
+                            <constraint firstItem="OXF-QU-TGm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sg6-OK-ihU"/>
+                            <constraint firstItem="OXF-QU-TGm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xmc-Os-UOy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="taskTableView" destination="OXF-QU-TGm" id="L7N-m2-bug"/>
+                        <segue destination="SLk-Fk-FqG" kind="show" identifier="SegueEditTaskViewController" id="Y5n-Dr-F2Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--Add Task View Controller-->
+        <scene sceneID="Iok-NY-kqo">
+            <objects>
+                <viewController id="SLk-Fk-FqG" customClass="AddTaskViewController" customModule="Core_ToDo_for_Qiita" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dgJ-gr-AzU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9M-ni-mfm">
+                                <rect key="frame" x="37.5" y="18.5" width="300" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.94597735760000001" blue="0.038719758460000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Vdc-sO-Q0F"/>
+                                    <constraint firstAttribute="height" constant="30" id="sTV-LM-VFP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Fsj-NH-GXC">
+                                <rect key="frame" x="37.5" y="98.5" width="300" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7sR-dN-bBe"/>
+                                    <constraint firstAttribute="width" constant="300" id="hGG-Z2-Vew"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="ToDo"/>
+                                    <segment title="Shopping"/>
+                                    <segment title="Assignment"/>
+                                </segments>
+                                <connections>
+                                    <action selector="categoryChosen:" destination="SLk-Fk-FqG" eventType="valueChanged" id="GGk-to-tSS"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter New Task" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d15-MB-AiW">
+                                <rect key="frame" x="37.5" y="58.5" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="0ZI-x1-Nm1"/>
+                                    <constraint firstAttribute="height" constant="30" id="zsv-B8-ehI"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bW6-C4-FsR">
+                                <rect key="frame" x="272.5" y="18.5" width="30" height="30"/>
+                                <state key="normal" title="✖︎"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="SLk-Fk-FqG" eventType="touchUpInside" id="QEL-K6-gTD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycc-zF-mLC">
+                                <rect key="frame" x="276.5" y="138.5" width="22" height="22"/>
+                                <connections>
+                                    <action selector="plusButtonTapped:" destination="SLk-Fk-FqG" eventType="touchUpInside" id="SRN-N3-UjA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94293551509999995" green="0.95407626300000004" blue="0.92509464860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bW6-C4-FsR" firstAttribute="centerX" secondItem="dgJ-gr-AzU" secondAttribute="centerX" constant="100" id="0gq-TR-HgX"/>
+                            <constraint firstItem="bW6-C4-FsR" firstAttribute="centerY" secondItem="dgJ-gr-AzU" secondAttribute="centerY" constant="-300" id="5Pv-T0-ONr"/>
+                            <constraint firstItem="ycc-zF-mLC" firstAttribute="top" secondItem="Fsj-NH-GXC" secondAttribute="bottom" constant="10" id="Ds7-ES-KAR"/>
+                            <constraint firstItem="U9M-ni-mfm" firstAttribute="centerX" secondItem="dgJ-gr-AzU" secondAttribute="centerX" id="FCC-8c-hPH"/>
+                            <constraint firstItem="Fsj-NH-GXC" firstAttribute="top" secondItem="d15-MB-AiW" secondAttribute="bottom" constant="10" id="Jqr-Xv-oBU"/>
+                            <constraint firstItem="ycc-zF-mLC" firstAttribute="centerX" secondItem="dgJ-gr-AzU" secondAttribute="centerX" constant="100" id="Kis-7f-JKC"/>
+                            <constraint firstItem="U9M-ni-mfm" firstAttribute="centerY" secondItem="dgJ-gr-AzU" secondAttribute="centerY" constant="-300" id="aXh-JH-N15"/>
+                            <constraint firstItem="d15-MB-AiW" firstAttribute="top" secondItem="U9M-ni-mfm" secondAttribute="bottom" constant="10" id="bmm-fM-QAG"/>
+                            <constraint firstItem="Fsj-NH-GXC" firstAttribute="centerX" secondItem="dgJ-gr-AzU" secondAttribute="centerX" id="ww2-ng-l2P"/>
+                            <constraint firstItem="d15-MB-AiW" firstAttribute="centerX" secondItem="dgJ-gr-AzU" secondAttribute="centerX" id="z2P-5l-Wbs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="x6v-MK-fWC"/>
+                    </view>
+                    <connections>
+                        <outlet property="categorySegmentedControl" destination="Fsj-NH-GXC" id="wKi-4e-ZiM"/>
+                        <outlet property="taskTextField" destination="d15-MB-AiW" id="Xpv-95-lpb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KAq-Dz-TYb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="865" y="134"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Y5n-Dr-F2Q"/>
+    </inferredMetricsTieBreakers>
 </document>

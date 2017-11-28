@@ -15,6 +15,9 @@
 		093915BF1FC8F54C00D035B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 093915BD1FC8F54C00D035B4 /* LaunchScreen.storyboard */; };
 		093915CA1FC8F54C00D035B4 /* Core_ToDo_for_QiitaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093915C91FC8F54C00D035B4 /* Core_ToDo_for_QiitaTests.swift */; };
 		093915D51FC8F54C00D035B4 /* Core_ToDo_for_QiitaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093915D41FC8F54C00D035B4 /* Core_ToDo_for_QiitaUITests.swift */; };
+		093915E31FC8FAEA00D035B4 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093915E21FC8FAEA00D035B4 /* AddTaskViewController.swift */; };
+		093915E71FC945E100D035B4 /* TaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 093915E61FC945E100D035B4 /* TaskTableViewCell.xib */; };
+		093915E91FC9517200D035B4 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093915E81FC9517200D035B4 /* TaskTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		093915D01FC8F54C00D035B4 /* Core ToDo for QiitaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core ToDo for QiitaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		093915D41FC8F54C00D035B4 /* Core_ToDo_for_QiitaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core_ToDo_for_QiitaUITests.swift; sourceTree = "<group>"; };
 		093915D61FC8F54C00D035B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		093915E21FC8FAEA00D035B4 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		093915E61FC945E100D035B4 /* TaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskTableViewCell.xib; sourceTree = "<group>"; };
+		093915E81FC9517200D035B4 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +108,13 @@
 				093915B11FC8F54C00D035B4 /* AppDelegate.swift */,
 				093915B31FC8F54C00D035B4 /* ViewController.swift */,
 				093915B51FC8F54C00D035B4 /* Main.storyboard */,
+				093915E61FC945E100D035B4 /* TaskTableViewCell.xib */,
+				093915E21FC8FAEA00D035B4 /* AddTaskViewController.swift */,
 				093915BB1FC8F54C00D035B4 /* Assets.xcassets */,
 				093915BD1FC8F54C00D035B4 /* LaunchScreen.storyboard */,
 				093915C01FC8F54C00D035B4 /* Info.plist */,
 				093915B81FC8F54C00D035B4 /* Core_ToDo_for_Qiita.xcdatamodeld */,
+				093915E81FC9517200D035B4 /* TaskTableViewCell.swift */,
 			);
 			path = "Core ToDo for Qiita";
 			sourceTree = "<group>";
@@ -235,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				093915E71FC945E100D035B4 /* TaskTableViewCell.xib in Resources */,
 				093915BF1FC8F54C00D035B4 /* LaunchScreen.storyboard in Resources */,
 				093915BC1FC8F54C00D035B4 /* Assets.xcassets in Resources */,
 				093915B71FC8F54C00D035B4 /* Main.storyboard in Resources */,
@@ -263,6 +273,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				093915B41FC8F54C00D035B4 /* ViewController.swift in Sources */,
+				093915E31FC8FAEA00D035B4 /* AddTaskViewController.swift in Sources */,
+				093915E91FC9517200D035B4 /* TaskTableViewCell.swift in Sources */,
 				093915B21FC8F54C00D035B4 /* AppDelegate.swift in Sources */,
 				093915BA1FC8F54C00D035B4 /* Core_ToDo_for_Qiita.xcdatamodeld in Sources */,
 			);
